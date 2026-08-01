@@ -1,19 +1,28 @@
 import { motion } from 'framer-motion';
-import { 
-  SiReact, SiNodedotjs, SiPython, SiTensorflow, 
-  SiDocker, SiPostgresql, SiMongodb 
+import { Bot } from 'lucide-react';
+import {
+  SiReact,
+  SiNodedotjs,
+  SiPython,
+  SiTypescript,
+  SiDocker,
+  SiPostgresql,
 } from 'react-icons/si';
-import { FaAws } from 'react-icons/fa';
+import { FaAws, FaMicrosoft } from 'react-icons/fa';
 
 const techStack = [
-  { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-  { name: "Python", icon: SiPython, color: "#3776AB" },
-  { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
-  { name: "AWS", icon: FaAws, color: "#FF9900" },
-  { name: "Docker", icon: SiDocker, color: "#2496ED" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-  { name: "MongoDB", icon: SiMongodb, color: "#47A248" }
+  { name: 'React', icon: SiReact },
+  { name: 'Next.js', icon: SiReact },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'Node.js', icon: SiNodedotjs },
+  { name: 'Python', icon: SiPython },
+  { name: 'FastAPI', icon: SiPython },
+  { name: 'PostgreSQL', icon: SiPostgresql },
+  { name: 'AWS', icon: FaAws },
+  { name: 'Azure', icon: FaMicrosoft },
+  { name: 'Docker', icon: SiDocker },
+  { name: 'Kubernetes', icon: SiDocker },
+  { name: 'OpenAI / Claude / Gemini', icon: Bot },
 ];
 
 export default function TechStack() {
@@ -22,14 +31,14 @@ export default function TechStack() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-2 block">
-            Behind My Designs
+            Core Toolkit
           </span>
           <h2 className="text-3xl font-display font-bold text-white">
-            Technologies I Work With
+            Technologies and platforms I use to ship modern products
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
           {techStack.map((tech, i) => (
             <motion.div
               key={tech.name}
@@ -39,7 +48,7 @@ export default function TechStack() {
               transition={{ duration: 0.3, delay: i * 0.05 }}
               className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-full hover:border-primary/50 hover:bg-primary/5 transition-colors group cursor-default"
             >
-              <tech.icon className="text-gray-400 group-hover:text-current transition-colors" style={{ color: 'inherit' }} size={20} />
+              <tech.icon className="text-gray-400 group-hover:text-primary transition-colors" size={20} />
               <span className="text-gray-300 font-medium">{tech.name}</span>
             </motion.div>
           ))}

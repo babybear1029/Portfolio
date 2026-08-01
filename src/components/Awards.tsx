@@ -1,31 +1,27 @@
 import { motion } from 'framer-motion';
-import { Award, Trophy, Star, ShieldCheck } from 'lucide-react';
+import { BrainCircuit, Layers3, Rocket, ShieldCheck } from 'lucide-react';
 
-const awards = [
+const highlights = [
   {
-    icon: Trophy,
-    title: "Best AI Innovation 2023",
-    issuer: "TechCrunch Awards",
-    year: "2023"
+    icon: BrainCircuit,
+    title: 'AI Product Delivery',
+    detail: 'Built conversational AI systems, AI dashboards, and intelligent agents for startup and enterprise products.',
   },
   {
-    icon: Award,
-    title: "Developer of the Year",
-    issuer: "Global Web Summit",
-    year: "2022"
+    icon: Layers3,
+    title: 'Full-Stack Architecture',
+    detail: 'Delivered modern frontend and backend systems using React, Next.js, TypeScript, Node.js, Python, FastAPI, and PostgreSQL.',
+  },
+  {
+    icon: Rocket,
+    title: 'Cloud-Native Launches',
+    detail: 'Shipped scalable platforms on AWS and Azure with Docker, Kubernetes, CI/CD, and secure API integrations.',
   },
   {
     icon: ShieldCheck,
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    year: "2021"
+    title: 'Leadership & Mentorship',
+    detail: 'Guided engineering teams, established best practices, and helped founders shape technical direction.',
   },
-  {
-    icon: Star,
-    title: "Top Rated Freelancer",
-    issuer: "Upwork & TopTal",
-    year: "2020 - Present"
-  }
 ];
 
 export default function Awards() {
@@ -34,15 +30,15 @@ export default function Awards() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-2 block">
-            Achievements
+            Career Highlights
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
-            Award Winning Experiences
+            What I consistently bring to product and engineering teams
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {awards.map((award, i) => (
+          {highlights.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -52,13 +48,10 @@ export default function Awards() {
               className="bg-card border border-border rounded-2xl p-8 text-center hover:border-primary/50 transition-all group"
             >
               <div className="w-16 h-16 mx-auto bg-background rounded-full flex items-center justify-center border border-border group-hover:border-primary text-primary mb-6 transition-colors">
-                <award.icon size={28} />
+                <item.icon size={28} />
               </div>
-              <h3 className="text-xl font-display font-bold text-white mb-2">{award.title}</h3>
-              <p className="text-gray-400 text-sm mb-4">{award.issuer}</p>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">
-                {award.year}
-              </span>
+              <h3 className="text-xl font-display font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{item.detail}</p>
             </motion.div>
           ))}
         </div>

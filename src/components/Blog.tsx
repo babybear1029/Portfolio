@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import blog1 from '@assets/generated_images/blog-1.jpg';
 import blog2 from '@assets/generated_images/blog-2.jpg';
 import blog3 from '@assets/generated_images/blog-3.jpg';
 
 const posts = [
   {
-    title: "Optimizing React Performance in 2024",
-    date: "Oct 15, 2023",
-    category: "Frontend",
+    title: 'Building AI Systems That People Actually Use',
+    date: 'Product Strategy',
+    category: 'AI',
     image: blog1,
-    desc: "Deep dive into useMemo, concurrent rendering, and techniques for silky smooth 60fps applications."
+    desc: 'How practical LLM applications differ from flashy demos and why user workflows matter more than raw model capability.',
   },
   {
-    title: "Understanding Transformer Models",
-    date: "Sep 28, 2023",
-    category: "Machine Learning",
+    title: 'Designing Scalable SaaS Architecture',
+    date: 'Engineering',
+    category: 'Architecture',
     image: blog2,
-    desc: "A simplified breakdown of the attention mechanism and how models like GPT really work under the hood."
+    desc: 'A look at structuring modern web platforms for growth, resilience, and maintainability from the start.',
   },
   {
-    title: "Serverless vs Containers on AWS",
-    date: "Aug 10, 2023",
-    category: "Cloud",
+    title: 'From RAG to Automation: The Next Layer of AI Products',
+    date: 'Automation',
+    category: 'Innovation',
     image: blog3,
-    desc: "When to choose Lambda functions over ECS, analyzing cost, cold starts, and scaling architectures."
-  }
+    desc: 'Why retrieval, orchestration, and workflow automation are becoming core ingredients in AI-powered software.',
+  },
 ];
 
 export default function Blog() {
@@ -35,15 +35,12 @@ export default function Blog() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
             <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-2 block">
-              Articles
+              Thinking & Notes
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
-              Insights from My Blog
+              Topics I care about at the intersection of AI and product delivery
             </h2>
           </div>
-          <button className="text-white font-semibold flex items-center gap-2 hover:text-primary transition-colors border-b border-white hover:border-primary pb-1">
-            View All Posts <ArrowRight size={18} />
-          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -60,18 +57,18 @@ export default function Blog() {
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
                   {post.category}
                 </div>
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
+                <img
+                  src={post.image}
+                  alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800";
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800';
                   }}
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-2 text-gray-500 text-sm mb-3">
-                  <Calendar size={14} />
+                  <Sparkles size={14} />
                   <span>{post.date}</span>
                 </div>
                 <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-primary transition-colors">
@@ -80,10 +77,10 @@ export default function Blog() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                   {post.desc}
                 </p>
-                <button className="text-primary font-semibold flex items-center gap-2 mt-auto group/btn">
-                  Read More
+                <a href="#contact" className="text-primary font-semibold flex items-center gap-2 mt-auto group/btn">
+                  Discuss this topic
                   <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

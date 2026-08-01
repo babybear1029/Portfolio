@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: "200+", label: "Projects Completed" },
-  { value: "50+", label: "Happy Clients" },
-  { value: "150+", label: "App Designs" },
-  { value: "5+", label: "Years Experience" }
+  { value: '20+', label: 'Years Building Software' },
+  { value: '6+', label: 'Teams Led' },
+  { value: '100+', label: 'APIs & Platforms Shipped' },
+  { value: '15+', label: 'Industries Served' },
 ];
 
 export default function Stats() {
@@ -13,7 +13,7 @@ export default function Stats() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-border">
           {stats.map((stat, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

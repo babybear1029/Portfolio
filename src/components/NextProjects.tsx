@@ -1,36 +1,35 @@
 import { motion } from 'framer-motion';
-import { Lightbulb, Code2 } from 'lucide-react';
+import { BrainCircuit, Bot } from 'lucide-react';
 
 const projects = [
   {
-    title: "AI-Powered Knowledge Base",
-    type: "Internal Tool",
-    status: "Planning",
-    icon: Lightbulb,
-    desc: "A RAG (Retrieval-Augmented Generation) system for company documentation to allow natural language querying of technical docs."
+    title: 'Agentic Product Workflows',
+    type: 'AI Systems',
+    status: 'Exploring',
+    icon: BrainCircuit,
+    desc: 'Designing practical agent-based workflows that connect LLM reasoning, business rules, and existing software tools.',
   },
   {
-    title: "Open Source UI Library",
-    type: "Frontend Open Source",
-    status: "In Development",
-    icon: Code2,
-    desc: "A minimalist, highly accessible set of React components built with Framer Motion and Tailwind CSS."
-  }
+    title: 'Operational AI Assistants',
+    type: 'Internal Tools',
+    status: 'Building',
+    icon: Bot,
+    desc: 'Creating copilots and assistants that help teams search knowledge, automate handoffs, and move work forward faster.',
+  },
 ];
 
 export default function NextProjects() {
   return (
     <section className="py-20 bg-background border-t border-border relative overflow-hidden">
-      {/* Decorative gradient */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            What's Next?
+            What I’m exploring next
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            I'm always exploring new ideas and pushing boundaries. Here's a sneak peek at what I'm currently working on in my free time.
+            I’m always looking for the next useful layer of intelligence—whether that means better copilots, more reliable automation, or smarter product experiences.
           </p>
         </div>
 
@@ -49,8 +48,8 @@ export default function NextProjects() {
                   <project.icon size={24} />
                 </div>
                 <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-                  project.status === 'Planning' 
-                    ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' 
+                  project.status === 'Exploring'
+                    ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
                     : 'bg-green-500/10 text-green-400 border border-green-500/20'
                 }`}>
                   {project.status}
